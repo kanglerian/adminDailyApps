@@ -1,0 +1,10 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^daily\.codalecenter\.com$
+RewriteRule ^/?$ "https\:\/\/daily\.codalecenter\.com\/" [R=301,L]
+
+#redirect http to https
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
